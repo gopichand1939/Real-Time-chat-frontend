@@ -4,11 +4,12 @@ import { io } from 'socket.io-client';
 import './Chat.css';
 
 // Connect to your backend server
-const socket = io('http://localhost:5000', {
+const socket = io('https://real-time-chat-backend-8vmz.onrender.com', {
   reconnection: true,
   reconnectionAttempts: 5,
   reconnectionDelay: 1000,
 });
+
 
 function Chat() {
   const location = useLocation();
