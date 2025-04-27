@@ -5,6 +5,7 @@ import './Chat.css';
 
 // Connect to your backend server
 const socket = io('https://real-time-chat-backend-8vmz.onrender.com', {
+  transports: ['websocket'],  // ⚡ ADD THIS
   reconnection: true,
   reconnectionAttempts: 5,
   reconnectionDelay: 1000,
