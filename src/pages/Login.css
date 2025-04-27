@@ -1,0 +1,53 @@
+/* Login Page Styles */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f4f8;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .login-title {
+    font-size: 3rem;
+    margin-bottom: 40px;
+    color: #4a90e2;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 400px;
+    align-items: center;
+  }
+  
+  .username-input {
+    padding: 15px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  .username-input:focus {
+    outline: none;
+    border-color: #4a90e2;
+  }
+  
+  .join-button {
+    padding: 15px;
+    font-size: 1.2rem;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .join-button:hover {
+    background-color: #357ab7;
+  }
+  
