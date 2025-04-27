@@ -3,14 +3,13 @@ import { useEffect, useState, useCallback, useRef } from 'react';
 import { io } from 'socket.io-client';
 import './Chat.css';
 
-// Connect to your backend server
+// ✅ Connect to your backend server
 const socket = io('https://real-time-chat-backend-8vmz.onrender.com', {
-  transports: ['websocket'],  // ⚡ ADD THIS
+  transports: ['websocket'],  // ⚡ Force WebSocket transport
   reconnection: true,
   reconnectionAttempts: 5,
   reconnectionDelay: 1000,
 });
-
 
 function Chat() {
   const location = useLocation();
@@ -48,7 +47,6 @@ function Chat() {
       socket.emit('join', username);
     }
 
-    // 🛠 Load previous chat history when user joins
     socket.on('chatHistory', (previousMessages) => {
       console.log('Previous messages received:', previousMessages);
       setMessages(previousMessages);
@@ -79,7 +77,6 @@ function Chat() {
 
     socket.on('userDisconnected', (user) => {
       console.log(`${user} went offline.`);
-      // Optional: show notification
     });
 
     return () => {
@@ -145,6 +142,7 @@ function Chat() {
           )}
         </div>
       </header>
+
       <div className="message-container">
         {messages.map((msg, i) => (
           <div
@@ -182,6 +180,7 @@ function Chat() {
         )}
         <div ref={messagesEndRef} />
       </div>
+
       <form className="message-input-form" onSubmit={sendMessage}>
         <input
           type="text"
